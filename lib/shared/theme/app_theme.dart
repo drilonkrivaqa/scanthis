@@ -6,7 +6,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4454FF)),
       useMaterial3: true,
       appBarTheme: const AppBarTheme(centerTitle: false),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         elevation: 1,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
@@ -24,7 +24,7 @@ class AppTheme {
       ),
       useMaterial3: true,
       appBarTheme: const AppBarTheme(centerTitle: false),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         elevation: 1,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
