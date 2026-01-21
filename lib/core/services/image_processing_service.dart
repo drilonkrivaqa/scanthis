@@ -49,9 +49,9 @@ class ImageProcessingService {
     for (var y = 0; y < height; y++) {
       for (var x = 0; x < width; x++) {
         final pixel = image.getPixel(x, y);
-        final r = img.getRed(pixel);
-        final g = img.getGreen(pixel);
-        final b = img.getBlue(pixel);
+        final r = (pixel >> 16) & 0xFF;
+        final g = (pixel >> 8) & 0xFF;
+        final b = pixel & 0xFF;
         final isWhite = r > 240 && g > 240 && b > 240;
         if (!isWhite) {
           if (x < left) left = x;
