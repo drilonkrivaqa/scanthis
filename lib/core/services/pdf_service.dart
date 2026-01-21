@@ -22,9 +22,6 @@ class PdfService {
             child: pw.Image(
               image,
               fit: pw.BoxFit.contain,
-              filterQuality: grayscale
-                  ? PdfImageFilterQuality.none
-                  : PdfImageFilterQuality.high,
             ),
           ),
         ),
