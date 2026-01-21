@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'scan_page.dart';
-import 'history_page.dart';
-import 'qr_generator_page.dart';
+import 'library_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,8 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final pages = const [
       ScanPage(),
-      HistoryPage(),
-      QrGeneratorPage(),
+      LibraryPage(),
     ];
 
     return Scaffold(
@@ -28,16 +26,12 @@ class _HomePageState extends State<HomePage> {
         onDestinationSelected: (i) => setState(() => index = i),
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.qr_code_scanner),
+            icon: Icon(Icons.document_scanner),
             label: 'Scan',
           ),
           NavigationDestination(
-            icon: Icon(Icons.history),
-            label: 'History',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.qr_code_2),
-            label: 'Create',
+            icon: Icon(Icons.folder_open),
+            label: 'Library',
           ),
         ],
       ),

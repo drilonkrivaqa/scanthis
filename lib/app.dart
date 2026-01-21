@@ -6,8 +6,8 @@ class ScanThisApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = ColorScheme.fromSeed(
-      seedColor: const Color(0xFF6D5EF7),
+    final cs = ColorScheme.fromSeed(
+      seedColor: const Color(0xFF5B6CFF),
       brightness: Brightness.light,
     );
 
@@ -16,10 +16,10 @@ class ScanThisApp extends StatelessWidget {
       title: 'ScanThis',
       theme: ThemeData(
         useMaterial3: true,
-        colorScheme: colorScheme,
-        scaffoldBackgroundColor: colorScheme.surface,
+        colorScheme: cs,
+        scaffoldBackgroundColor: cs.surface,
         appBarTheme: AppBarTheme(
-          backgroundColor: colorScheme.surface,
+          backgroundColor: cs.surface,
           surfaceTintColor: Colors.transparent,
           elevation: 0,
         ),
