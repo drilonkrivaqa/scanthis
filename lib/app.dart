@@ -20,7 +20,6 @@ class ScanThisApp extends StatelessWidget {
         scaffoldBackgroundColor: cs.surface,
         appBarTheme: AppBarTheme(
           backgroundColor: cs.surface,
-          surfaceTintColor: Colors.transparent,
           elevation: 0,
         ),
       ),

@@ -65,7 +65,7 @@ class _ScanPageState extends State<ScanPage> {
                     cs.primaryContainer.withOpacity(0.6),
                   ],
                 ),
-                border: Border.all(color: cs.outlineVariant),
+                border: Border.all(color: cs.outline),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +82,7 @@ class _ScanPageState extends State<ScanPage> {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 16),
-                  FilledButton.icon(
+                  ElevatedButton.icon(
                     onPressed: busy ? null : _scan,
                     icon: busy
                         ? const SizedBox(
@@ -111,9 +111,9 @@ class _ScanPageState extends State<ScanPage> {
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: cs.surfaceContainerHighest,
+                  color: cs.surfaceVariant,
                   borderRadius: BorderRadius.circular(24),
-                  border: Border.all(color: cs.outlineVariant),
+                  border: Border.all(color: cs.outline),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
