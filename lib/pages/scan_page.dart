@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../services/document_store.dart';
+import '../services/library_store.dart';
 import '../services/scan_service.dart';
-import 'document_detail_page.dart';
+import 'view_doc_page.dart';
 
 class ScanPage extends StatefulWidget {
   const ScanPage({super.key});
@@ -19,18 +18,19 @@ class _ScanPageState extends State<ScanPage> {
     setState(() => busy = true);
 
     try {
-      final doc = await ScanService.instance.scanToDocument(pageLimit: 50);
+      final doc = await ScanService.instance.scanToPdf(pageLimit: 50);
       if (!mounted) return;
 
       if (doc == null) {
+        // user canceled
         return;
       }
 
-      await DocumentStore.instance.addDocument(doc);
+      await LibraryStore.instance.add(doc);
 
       if (!mounted) return;
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (_) => DocumentDetailPage(docId: doc.id)),
+        MaterialPageRoute(builder: (_) => ViewDocPage(docId: doc.id)),
       );
     } catch (e) {
       if (!mounted) return;
@@ -86,10 +86,10 @@ class _ScanPageState extends State<ScanPage> {
                     onPressed: busy ? null : _scan,
                     icon: busy
                         ? const SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
                         : const Icon(Icons.document_scanner),
                     label: Text(busy ? 'Opening scanner…' : 'Scan Document'),
                     style: FilledButton.styleFrom(
